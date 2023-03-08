@@ -1,0 +1,14 @@
+#!/bin/bash
+for file in *.html; do
+    if [ -f "../$file" ]; then
+        cmp --silent "$file" "../$file"
+        if [ $? -eq 1 ]; then
+            cp -u "$file" ..
+            echo "Copied $file to parent directory."
+        fi
+    else
+        cp "$file" ..
+        echo "Copied $file to parent directory."
+    fi
+done
+
