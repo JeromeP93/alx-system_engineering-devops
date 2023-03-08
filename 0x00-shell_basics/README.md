@@ -6,4 +6,8 @@ Task 0. Where am I?
 
 Task 1. What’s in there?
 - Line 1: specifies that the script should be interpreted using the Bash shell.
-- Line 2: display the contents list of the current directory. 
+- Line 2: display the contents list of the current directory.
+
+Task 2. There is no place like home
+- Line 1: specifies that the script should be interpreted using the Bash shell.
+- Line 2: changes the working directory to the home directory. 
