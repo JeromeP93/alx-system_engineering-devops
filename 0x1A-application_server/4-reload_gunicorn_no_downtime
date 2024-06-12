@@ -10,4 +10,12 @@ fi
 # Reload Gunicorn gracefully
 kill -HUP $(pgrep -f "gunicorn")
 
-echo "Gunicorn reloaded gracefully."
+# Wait for a few seconds for the workers to gracefully shut down
+sleep 5
+
+# Check if new workers have been started
+if pgrep -f "gunicorn" > /dev/null; then
+    echo "Gunicorn workers have been gracefully reloaded."
+else
+    echo "Failed to gracefully reload Gunicorn workers."
+fi
